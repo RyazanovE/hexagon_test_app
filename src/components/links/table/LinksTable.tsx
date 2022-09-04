@@ -1,11 +1,13 @@
 import { useGetStatisticsQuery } from 'api/links/linksApi';
 import { useAppSelector } from 'hooks/redux/reduxHooks';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Spinner } from 'shared/ui/spinner/Spinner';
 import { sortArrSelector, statisticsPaginationSelector } from 'store/slices/links/linksSlice';
 import { LinksTableHeader } from './header/LinksTableHeader';
 import { LinksTableItem } from './item/LinksTableItem';
 import multisort from "multisort"
+import { useActions } from 'hooks/actions/useActions';
+import { LinksTableSortButton } from './sort-button/LinksTableSortButton';
 
 
 export type ILinksTableProps = {
@@ -23,10 +25,15 @@ const LinksTable: React.FC<ILinksTableProps> = ({ }) => {
 		, refetchOnMountOrArgChange: true
 	})
 
+	const { resetSortArr } = useActions()
+
+	useEffect(() => () => { resetSortArr() }, []);
 
 
+	
 	return (
-		<ul className='child:flex child:gap-3 rounded-md bg-white child:items-center w-full items-center'>
+		<ul className='child:flex child:gap-3 rounded-md bg-white child:items-center w-full items-center relative'>
+			<LinksTableSortButton />
 			<LinksTableHeader />
 			{
 				!isFetching ?

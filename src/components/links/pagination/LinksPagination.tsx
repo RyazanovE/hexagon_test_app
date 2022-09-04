@@ -14,14 +14,14 @@ const LinksPagination: React.FC<ILinksPaginationProps> = ({ }) => {
 
 	const { limit, offset } = useAppSelector(statisticsPaginationSelector)
 
-	const { data } = useGetAllStatisticsQuery(undefined, {refetchOnMountOrArgChange: true})
+	const { data: count } = useGetAllStatisticsQuery(undefined, {refetchOnMountOrArgChange: true})
 	const [pageCount, setpageCount] = useState(0);
 	const { setStatisticsPagination } = useActions()
 
 	useEffect(() => {
-		if (!data) return
-		setpageCount(Math.ceil(data / limit));
-	}, [offset, data]);
+		if (!count) return
+		setpageCount(Math.ceil(count / limit));
+	}, [offset, count]);
 
 	if (pageCount === 0) return <div className='h-[40px]'></div>
 

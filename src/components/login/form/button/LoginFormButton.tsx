@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useLoginMutation } from 'api/auth/authApi';
 import { VioletButton } from 'shared/ui/buttons/violet-button/VioletButton';
 import cl from "classnames"
@@ -9,7 +9,7 @@ export type ILoginFormButtonProps = {
 
 }
 
-const LoginFormButton: React.FC<ILoginFormButtonProps> = ({ }) => {
+const LoginFormButton: React.FC<ILoginFormButtonProps> = memo(({ }) => {
 	const loginFormType = useAppSelector(loginFormTypeSelector)
 	const isRegister = loginFormType === "register"
 
@@ -22,6 +22,6 @@ const LoginFormButton: React.FC<ILoginFormButtonProps> = ({ }) => {
 			<span className={cl("transition-opacity duration-300 aabsolute", { "opacity-0": !isRegister })}>Зарегестрироваться</span>
 		</VioletButton>
 	);
-}
+})
 
 export { LoginFormButton };
