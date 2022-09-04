@@ -9,5 +9,8 @@ npm start
 - Tailwind + HeadlessUI
 - multisort(Сортировка), react-paginate(Пагинация)
 
+### Ссылка на деплой
+https://hexagon-test-dg6cvvolk-ryazanove.vercel.app/
+
 ### Node Version
 v16.13.2
