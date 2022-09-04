@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "email": "takeoffstaff@gmail.com",
+      "password": "$2a$10$Kshmcr2twKeOOyFsin370ebCr.0tQ4DnxKg4taExbFMk4oTc78T5a",
+      "id": 1
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Григорий",
+      "phone": "+79163334753",
+      "id": 5
+    },
+    {
+      "name": "Евгений",
+      "phone": "+79163334755",
+      "id": 6
+    },
+    {
+      "name": "Матвей",
+      "phone": "+79163334758",
+      "id": 7
+    },
+    {
+      "name": "Николай",
+      "phone": "+79163334759",
+      "id": 8
+    },
+    {
+      "name": "Мария",
+      "phone": "+79163334751",
+      "id": 9
+    }
+  ]
+}
