@@ -1,6 +1,10 @@
 ### Front Start
 npm start
 
+### Back Start
+npm run serve
+
+
  ### Основной стек
 - React + React Hooks
 - Redux Toolkit, RTK Query
